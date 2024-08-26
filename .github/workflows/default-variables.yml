@@ -1,0 +1,20 @@
+name: Default Variable Example
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  variables-example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Print the GitHub context"
+        run: |
+          echo "The repository is ${{ github.repository }}"
+          echo "The repository owner is ${{ github.repository_owner }}"
+          echo "The Sha of the commit is ${{ github.sha }}"
+          exho "The event name is ${{ github.event_name }}"
+          echo "The ref is ${{ github.ref }}"
+          echo "The actor is ${{ github.actor }}"
+          echo "The workflow is ${{ github.workflow }}"
+          echo "The action is ${{ github.action }}"
