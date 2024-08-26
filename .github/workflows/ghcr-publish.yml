@@ -24,5 +24,5 @@ jobs:
 
       - name: 'Build and Push the Image'
         run: |
-          docker build . --tag ghcr.oi/brycor/hello:latest
-          docker push ghcr.oi/brycor/hello:latest
+          docker build --tag ghcr.oi/${{ github.repository_owner }}/hello:latest .
+          docker push ghcr.oi/${{ github.repository_owner }}/hello:latest
