@@ -1,0 +1,14 @@
+name: Push Events
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  show-info:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Info
+          run: |
+            echo "This workflow is triggered due to issue being opened."
+  
