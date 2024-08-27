@@ -22,7 +22,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.LOGIN_GITHUB_TOKEN}}
 
-      - name: "Build and Push the Image"
+      - name: "Build the Image"
         run: |
-          docker tag hello-app ghcr.oi/brycor/hello-app:latest 
-          docker push ghcr.oi/brycor/hello-app:latest
+          docker build -t ghcr.io/brycor/hello-app:latest .
+
+      - name: "Run the Image"
+        run: |
+          docker run ghcr.io/brycor/hello-app:latest
+
+      - name: "Push the Image"
+        run: |
+          docker push ghcr.io/brycor/hello-app:latest
